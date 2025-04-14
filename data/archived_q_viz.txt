@@ -1,0 +1,13 @@
+{"tool": "viz", "dataset": "카테고리", "difficulty": "하", "category": "카테고리", "question": "성별을 확인한 후, 각 성별에 해당하는 생존자와 사망자의 수를 카운트하세요."}
+{"tool": "viz", "dataset": "요약 통계", "difficulty": "중상", "category": "요약 통계", "question": "Survived와 Pclass에 따라 승객의 수를 구하세요."}
+{"tool": "viz", "dataset": "tips", "difficulty": "하", "category": "카테고리", "question": "결측값이 있는 행을 제거하세요."}
+{"tool": "viz", "dataset": "tips", "difficulty": "중상", "category": "요약 통계", "question": "성별별 생존율을 구하세요."}
+{"tool": "viz", "dataset": "tips", "difficulty": "하", "category": "카테고리", "question": "결측값이 있는 행을 제거하세요."}
+{"tool": "viz", "dataset": "tips", "difficulty": "상", "category": "요약 통계", "question": "성별별 평균 팁 금액을 구하세요."}
+1|하|mpg|카테고리|자동차의 연비 데이터셋을 분석하여, 최고의 연비를 기록하는 자동차의 브랜드를 제외하고, 다음 5개의 브랜드의 연비 평균을 구하세요.
+2|중상|mpg|요약 통계|mpg 데이터셋에 포함된 1984년 이전 모델의 연비 데이터를 분석하여, 연비와 관련된 요인으로서, 연식, 엔진 크기, ваг온에 대한 상관관계를 분석하세요.
+1|하|penguins|분류 통계|아델리펭귄, 왕펭귄, 갈가리펭귄 등의 스펭스종별 인구 분포를 분석하여, 가장 풍부한 스펭스종을 구하세요.
+2|중상|penguins|요약 통계|펭귄의 몸무게,翼Span, 비둘기 등 3개의 변수에 대한 상관관계 분석을 수행하여, 가장 강한 상관관계를 보여주는 변수를 구하세요. 추가적으로, 이 변수와 관련된 펭귄의 특징을 설명해주세요.
+1|하|tips|요약 통계|What is the relationship between the total bill and tip percentage in the tips dataset?
+2|중하|tips|분류 통계|What factors contribute to the likelihood of a customer leaving a large tip (≥ 20%) in the tips dataset?
+Note: I followed the exact format specified in the example, with no extra spaces between items and using the correct delimiter (`|`). I also mapped the difficulty level in the correct order (하, 중하, 중상).

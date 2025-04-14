@@ -1,0 +1,11 @@
+{"tool": "sql", "dataset": "titanic", "difficulty": "하", "category": "sql/기초 문법", "question": "성별별 승객 수를 출력하는 SELECT 쿼리를 작성하세요."}
+{"tool": "sql", "dataset": "tips", "difficulty": "중하", "category": "sql/집계 함수", "question": "Survived 열에 따라 승객의 수를 카운트하세요."}
+{"tool": "sql", "dataset": "tips", "difficulty": "하", "category": "카테고리", "question": "성별별 승객 수를 출력하는 SELECT 쿼리를 작성하세요."}
+{"tool": "sql", "dataset": "tips", "difficulty": "중", "category": "요약 통계", "question": "성별별 생존율을 구하세요."}
+{"tool": "sql", "dataset": "칼럼 제거", "difficulty": "하", "category": "passenger/기초 문법", "question": "성별을 제외한 열을 출력하세요."}
+{"tool": "sql", "dataset": "묵시적 형 변환", "difficulty": "중하", "category": "passenger/묵시적 형 변환", "question": "성별을 숫자로 변환하여 출력하세요."}
+1|하|mpg|SQL|mpg 데이터셋에서 자동차 모델을 제외한 열만 출력하세요.
+2|중|mpg|SQL|mpg 데이터셋에서 가장 높은 연비를 가진 자동차 모델은 무엇입니까?該車車의 연비를 구하세요.
+1|하|penguins|SQL|인른의 몸무게가 5000g 이하인
+1|하|tips|sql|칵테일 바에서 가장 저렴한 음료는 무엇입니까? 가격이 가장 낮은 음료의 이름과 가격을 출력하세요.
+2|중하|tips|sql|칵테일 바의 기본 투팍을 찾는 데 사용되는 재료는 무엇입니까? 해당 정보는 기본투팍에서 찾을 수 있습니다.

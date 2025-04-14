@@ -1,0 +1,5 @@
+{"tool": "sql", "dataset": "tips", "difficulty": "중하", "category": "sql/집계 함수", "question": "Survived 열에 따라 승객의 수를 카운트하세요."}
+{"tool": "sql", "dataset": "tips", "difficulty": "하", "category": "카테고리", "question": "성별별 승객 수를 출력하는 SELECT 쿼리를 작성하세요."}
+{"tool": "sql", "dataset": "tips", "difficulty": "중", "category": "요약 통계", "question": "성별별 생존율을 구하세요."}
+{"tool": "sql", "dataset": "칼럼 제거", "difficulty": "하", "category": "passenger/기초 문법", "question": "성별을 제외한 열을 출력하세요."}
+{"tool": "sql", "dataset": "묵시적 형 변환", "difficulty": "중하", "category": "passenger/묵시적 형 변환", "question": "성별을 숫자로 변환하여 출력하세요."}

@@ -1,0 +1,32 @@
+{
+  "DATASET": [
+    "titanic",
+    "tips",
+    "iris",
+    "penguins",
+    "flights",
+    "diamonds",
+    "mpg",
+    "car_crashes"
+  ],
+  "LLM": "Groq",
+  "study_matrix&difficulty": {
+    "pds": [
+      "중",
+      "상",
+      "최상"
+    ],
+    "sql": [
+      "하",
+      "중하",
+      "중"
+    ],
+    "viz": [
+      "하",
+      "중하",
+      "중상"
+    ]
+  },
+  "count": 2,
+  "file_type": "ipynb"
+}

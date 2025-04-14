@@ -1,0 +1,15 @@
+{
+    
+    "Pandas/기초 데이터 다루기": ["열 이름", "데이터프레임", "정렬", "행 개수", "열 개수"],
+    "Pandas/그룹 및 요약 통계": ["그룹화", "합계", "최대", "요약", "빈도"],
+    "Pandas/데이터 전처리": ["결측", "중복", "이상치", "타입", "삭제"],
+  
+    
+    "SQL/기초 문법": ["SELECT", "WHERE", "GROUP BY", "ORDER BY"],
+    "SQL/JOIN": ["JOIN", "LEFT JOIN", "INNER JOIN", "USING"],
+  
+    
+    "시각화/Matplotlib": ["plt.", "figure", "subplot", "xlabel", "legend"],
+    "시각화/Seaborn": ["sns.", "countplot", "heatmap", "pairplot"]
+  }
+  
