@@ -14,7 +14,74 @@ def append_if_not_exists(path, item):
     if not os.path.exists(path):
         items = []
     else:
-        with open(path, "r", encoding="utf-8") as f:
+        with open(path, "r", encimport os
+import json
+import pandas as pd
+from datetime import datetime
+from tools.paths import (
+    SETTING_PATH, ARCHIVE_PATH,
+    NOTEBOOK_DIR, LOG_REPORT_DIR
+)
+from config.derived_config import DERIVED_CONFIG
+
+tool_name_map = {
+    "pds": "pandas 라이브러리",
+    "sql": "SQL",
+    "viz": "시각화"
+}
+
+def save_log_report():
+    now = datetime.now()
+    date_str = now.strftime("%Y-%m-%d")
+    time_str = now.strftime("%Y-%m-%d %H:%M")
+    log_path = LOG_REPORT_DIR / f"report_{date_str}.txt"
+
+    # 📥 설정 로딩
+    with open(SETTING_PATH, "r", encoding="utf-8") as f:
+        config = json.load(f)
+
+    # 📊 archive.xlsx 로딩
+    if ARCHIVE_PATH.exists():
+        df = pd.read_excel(ARCHIVE_PATH)
+    else:
+        df = pd.DataFrame(columns=["tool", "question"])
+
+    # 도구별 문제 수 카운트
+    tool_counts = df["tool"].value_counts().to_dict()
+    total = len(df)
+
+    # 📓 노트북 파일 수 확인
+    ipynb_files = [f for f in os.listdir(NOTEBOOK_DIR) if f.endswith(".ipynb")]
+    ipynb_summary = ', '.join(ipynb_files) if ipynb_files else "없음"
+
+    # 📝 로그 작성
+    with open(log_path, "w", encoding="utf-8") as f:
+        f.write(f"📅 자동화 실행 리포트 - {time_str}\n\n")
+
+        f.write("✅ 설정 요약:\n")
+        f.write(f"- 데이터셋: {', '.join(config['DATASET'])}\n")
+        f.write(f"- LLM: {config['LLM']}\n")
+        f.write(f"- 파일 형식: {config['file_type']}\n")
+        f.write(f"- 호출 횟수: {config['count']}\n")
+
+        f.write("\n✅ 도구별 난이도 설정:\n")
+        for tool, levels in config["study_matrix&difficulty"].items():
+            kor_tool = tool_name_map.get(tool, tool)
+            f.write(f"- {kor_tool}: {', '.join(levels)}\n")
+
+        f.write("\n📊 문제 아카이브 수:\n")
+        for tool in config["study_matrix&difficulty"]:
+            kor_tool = tool_name_map.get(tool, tool)
+            count = tool_counts.get(tool, 0)
+            f.write(f"- {kor_tool}: {count}문제\n")
+        f.write(f"→ 총합: {total}문제\n")
+
+        f.write(f"\n📓 노트북 생성: {ipynb_summary}\n")
+        f.write(f"📤 노션 업로드: 완료 (추정)\n")
+        f.write(f"🕒 실행 시각: {time_str}\n")
+
+    print(f"📝 로그 저장 완료 → {log_path.name}")
+oding="utf-8") as f:
             items = [line.strip() for line in f if line.strip()]
 
     if item in items:

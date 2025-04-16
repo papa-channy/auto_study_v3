@@ -1,43 +1,58 @@
-# 📁 generator/q_gen.py
+import json
+import random
 
-import os
-from tools.paths import PROMPT_DIR, DATA_DIR
-from LLM.llm_selector import call_llm  # 자유형 문제 생성용
-from generator.q_post_format import format_questions  # 2차 호출용 (포맷 변환 함수)
-from generator.q_gen_utils import reset_prompt_file  # 프롬프트 초기화 함수
+from config.derived_config import DERIVED_CONFIG
+from tools.paths import QUESTIONS_PATH, PROMPT_PATH, SETTING_PATH
+from generator.q_gen_utils import parse_llm_response
+from LLM.llm_selector import generate_by_llm
 
-def generate_all_questions(dataset_list, tool_list, difficulty_map, llm_name, count):
-    for tool in tool_list:
-        prompt_path = os.path.join(PROMPT_DIR, f"p_{tool}.txt")
-        output_path = os.path.join(DATA_DIR, f"new_q_{tool}.txt")
+def generate_all_questions():
+    """
+    ✅ derived_config 기반 문제 자동 생성기
+    - 도구별 난이도 × 호출횟수 만큼 LLM 호출
+    - prompt.json 참조하여 프롬프트 기반 생성
+    - questions.json에 누적 저장
+    """
+    tool_summary = DERIVED_CONFIG["tool_summary"]
+    selected_datasets = DERIVED_CONFIG["random_datasets"]
 
-        # 1️⃣ 자유 프롬프트 불러오기
-        if not os.path.exists(prompt_path):
-            print(f"❗ {tool} → 프롬프트 파일 없음: {prompt_path}")
-            continue
+    # LLM 이름 가져오기
+    with open(SETTING_PATH, encoding="utf-8") as f:
+        config = json.load(f)
+    llm_name = config.get("LLM", "groq")
 
-        with open(prompt_path, "r", encoding="utf-8") as f:
-            prompt = f.read().strip()
+    # 1️⃣ 프롬프트 로딩
+    with open(PROMPT_PATH, encoding="utf-8") as f:
+        prompts = json.load(f)
 
+    all_questions = []
+
+    for tool, info in tool_summary.items():
+        prompt = prompts.get(tool)
         if not prompt:
-            print(f"❗ {tool} 프롬프트 내용 없음, 건너뜀")
+            print(f"⚠️ 프롬프트 누락: {tool}")
             continue
 
-        print(f"🧠 [{tool}] 1차 문제 생성 중...")
-        raw_response = call_llm(prompt, llm_name, temperature=1.0)
-        print(f"🔍 [{tool}] 1차 응답 완료 → 포맷 변환 중...")
+        print(f"\n🚀 [{tool.upper()}] 문제 생성 중...")
 
-        # 2️⃣ 포맷 변환 (ex_format_pds.txt 참고)
-        formatted = format_questions(tool, dataset_list[0], difficulty_map[tool], raw_response, llm_name)
-        if not formatted:
-            print(f"❌ [{tool}] 포맷 변환 실패")
-            continue
+        for level in info["difficulties"]:
+            for _ in range(info["calls"]):
+                dataset = random.choice(selected_datasets)
 
-        with open(output_path, "w", encoding="utf-8") as f:
-            for line in formatted:
-                f.write(line + "\n")
+                # 🔥 LLM 호출 (tool, count 인자 제거됨)
+                raw = generate_by_llm(prompt, llm_name=llm_name)
+                parsed = parse_llm_response(raw, tool)
 
-        print(f"✅ [{tool}] {len(formatted)}문제 저장 완료 → {os.path.basename(output_path)}")
+                # 메타정보 부여
+                for q in parsed:
+                    q["tool"] = tool
+                    q["dataset"] = dataset
+                    q["difficulty"] = level
 
-        # 3️⃣ 프롬프트 초기화
-        reset_prompt_file(tool)
+                all_questions.extend(parsed)
+
+    # 2️⃣ 결과 저장
+    with open(QUESTIONS_PATH, "w", encoding="utf-8") as f:
+        json.dump(all_questions, f, indent=2, ensure_ascii=False)
+
+    print(f"\n✅ 전체 문제 {len(all_questions)}개 저장 완료 (📁 questions.json)")

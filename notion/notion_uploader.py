@@ -1,4 +1,3 @@
-# 📁 notion/notion_uploader.py
 import os
 import json
 from dotenv import load_dotenv
@@ -28,32 +27,34 @@ class NotionUploader:
         for category, keywords in self.keyword_map.items():
             if any(k in text for k in keywords):
                 categories.append(category)
-        return list(set(categories))
+        return list(set(categories)) or ["기타"]  # 기본 분류
 
     def upload(self, questions):
+        success = 0
+        fail = 0
+
         for i, q in enumerate(questions, 1):
             try:
                 category = q.get("category", "")
                 category_list = [category] if category else self.classify(q["question"])
 
-                today = datetime.now()
-                today_str = f"{today.month}/{today.day}"
-                self.notion.pages.create(
+                today = datetime.now().strftime("%Y-%m-%d")
+
+                response = self.notion.pages.create(
                     parent={"database_id": self.database_id},
                     properties={
-                        "날짜": {"rich_text": [{"text": {"content": today_str}}]},
+                        "날짜": {"rich_text": [{"text": {"content": today}}]},
                         "dataset": {"select": {"name": q["dataset"]}},
                         "문제": {"rich_text": [{"text": {"content": q["question"]}}]},
-                        "분류": {"multi_select": [{"name": tag} for tag in category_list]} if category_list else {} ,
+                        "분류": {"multi_select": [{"name": tag} for tag in category_list]},
                         "난이도": {"select": {"name": q["difficulty"]}},
                         "상태": {"select": {"name": "미풀이"}},
                     }
                 )
-                print(f"✅ {i} 업로드 성공 | 분류: {', '.join(category_list) if category_list else '없음'}")
+                success += 1
+                print(f"✅ {i} 업로드 성공 | 분류: {', '.join(category_list)}")
             except Exception as e:
-                print(f"❌ {i} 업로드 실패: {e}")
+                fail += 1
+                print(f"❌ {i} 업로드 실패 | 내용: {q['question'][:30]}... → {e}")
 
-# ▶️ run_all.py 또는 test에서:
-# from notion.notion_uploader import NotionUploader
-# uploader = NotionUploader()
-# uploader.upload(processed_questions)
+        print(f"\n📤 업로드 요약: 성공 {success}개 / 실패 {fail}개")

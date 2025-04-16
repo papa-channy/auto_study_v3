@@ -1,36 +1,35 @@
 import os
-from tools.paths import DATA_DIR
+import json
+from tools.paths import QUESTIONS_PATH
 
 def preprocess_questions(tool_list):
     """
-    ✅ 각 도구별 new_q_{tool}.txt에서 문제를 불러와 | 기준으로 분리하여 구조화된 리스트 반환
-    실패하지 않도록 최대한 보정하며 필드 분해함
+    ✅ questions.json → Notion 업로드용 구조로 정제
+    - 질문 앞번호 제거 X
+    - "question" 필드 기반으로 필수 항목 추출
     """
-    all_questions = []
+    if not os.path.exists(QUESTIONS_PATH):
+        print("📭 questions.json 파일이 없습니다.")
+        return []
 
-    for tool in tool_list:
-        path = os.path.join(DATA_DIR, f"new_q_{tool}.txt")
-        if not os.path.exists(path):
+    with open(QUESTIONS_PATH, encoding="utf-8") as f:
+        raw_data = json.load(f)
+
+    processed = []
+
+    for item in raw_data:
+        q_text = item.get("question", "").strip()
+        if not q_text:
             continue
 
-        with open(path, "r", encoding="utf-8") as f:
-            for line in f:
-                if not line.strip() or "|" not in line:
-                    continue
+        processed.append({
+            "tool": item.get("tool", "unknown"),
+            "index": "",
+            "difficulty": item.get("difficulty", "중"),
+            "dataset": item.get("dataset", "unknown"),
+            "category": item.get("category", "기타"),
+            "question": q_text
+        })
 
-                parts = line.strip().split("|", 4)
-                while len(parts) < 5:
-                    parts.append("")  # 부족한 필드는 빈칸으로 채움
-
-                번호, 난이도, 데이터셋, 카테고리, 질문 = parts
-                all_questions.append({
-                    "tool": tool,
-                    "index": 번호,
-                    "difficulty": 난이도,
-                    "dataset": 데이터셋,
-                    "category": 카테고리,
-                    "question": 질문
-                })
-
-
-    return all_questions
+    print(f"✅ preprocess 완료: {len(processed)}개 문제 정제됨")
+    return processed

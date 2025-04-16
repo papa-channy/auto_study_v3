@@ -1,0 +1,34 @@
+
+`iris` 데이터셋을 사용하여, 꽃의 종류를 예측하는 모델을 구축하세요. 분석에 사용할 변수로는 꽃의 길이, 너비, 넓이, 색깔을 고려할 수 있습니다. 또한, 데이터.preprocessing, feature selection, hyperparameter tuning 등을 고려하여, 모델의 성능을 개선하세요. 예측 모델이 정확도 90% 이상을 달성할 수 있도록 하세요.
+`iris` 데이터셋을 사용하여, 특정 품종의 꽃을 예측하는 모델을 구축하세요. 분석에 사용할 변수로는 꽃의Sepal.Length, Sepal.Width, Petal.Length, Petal.Width를 고려할 수 있습니다. 또한, 데이터 preprocessing, one-hot encoding, feature scaling, hyperparameter tuning 등을 고려하여, 모델의 성능을 개선하세요.
+`iris` 데이터셋을 사용하여, 새로운 샘플의 꽃 종류를 예측하는 모델을 구축하세요. 분석에 사용할 변수로는 꽃의 Sepal Length, Sepal Width, Petal Length, Petal Width를 고려할 수 있습니다. además, 5-fold cross-validation을 사용하여 모델의 성능을 평가하고, hyperparameter tuning을 통해 최적의 모델을 선택하세요.
+**Description:** iris 데이터셋에는 세 종류의 꽃(setsosa, versicolor, virginica)과 각 꽃의 sepallength, petalength 정보가 있습니다. 이 문제에서는 세 종류의 꽃의 sepallength와 petalength의 평균을 비교하는 그래프를 생성하여 꽃의 품종별 특징을 분석하세요.
+* 사용할 데이터셋: iris
+* 그래프에 표시할 정보: sepallength와 petalength의 평균
+* 꽃의 품종별로 구분하여 표시: setsosa, versicolor, virginica
+* 그래프 제목과 축 레이블, LEGEND는 한국어로 작성
+* 데이터셋: iris
+* bar chart를 사용하여 세 가지 종류의 꽃(A, C, V) 중 Sepal Length, Sepal Width, Petal Length, Petal Width의 특징을 보여주세요.
+* 그래프의 제목은 "Iris 꽃의 특징"으로, x축은 "Feature" (Sepal Length, Sepal Width, Petal Length, Petal Width), y축은 "Value"로 설정하여주세요.
+* 각 그래프의 제목과 x축, y축의 레이블은 한국어로 작성하여주세요.
+* 그래프에서 가장 큰 특징을 갖추고 있는 종류의 꽃을 분석하여, 결과를 한 문장으로 정리하여주세요.
+`titanic` 데이터셋을 사용하여, 생존한 승객의 특징을 분석하여 생존 가능성을 예측하세요. 분석에 사용할 변수로는 성별, 나이, 등급, 부인 수, 자녀 수를 고려할 수 있습니다. 또한, 데이터셋에서 MISSING 값을 제거하고, 데이터의 불균형을 해결하기 위해 oversampling을 사용하세요.
+`titanic` 데이터셋을 사용하여, 생존한 승객의 특성과 사망한 승객의 특성을 비교 분석하세요. 분석에 사용할 변수로는 승객의 나이, 성별, 등급, 보유한 생명보험금 등을 고려할 수 있습니다. 또한, 2개의 그룹 간의 차이를 확인하기 위해 t-test를 사용하여 통계적 유의성을 확인하세요.
+`titanic` 데이터셋을 사용하여, 생존 여부를 예측하는 모델을 구축하세요. 분석에 사용할 변수로는 Passenger Class, Age, Sex, SibSp, Parch, Fare를 고려할 수 있습니다. 또한, 데이터셋에서 missing value가 있는 경우를 대응하여, 모델의 성능을 평가하고, 최적의 모델을 선택하세요.
+📊 사용 데이터셋: titanic
+타이타닉호 좌석 할당 데이터를 사용하여, 생존자와 사망자의 좌석 할당 분포를 비교하는 그래프를 생성하세요. 그래프의 제목은 "타이타ニック호 좌석 할당 분포"로, x축은 "좌석 등급"을, y축은 "비율"을 나타내게 하세요. 또한, 생존자와 사망자의 구별을 나타내는 색상으로 표시하세요.
+🌊 2012년 이브닝 스타즈에서 제공한 프로미의 팁 데이터를 사용하여, 메뉴의 종류별로 평균적으로 어떻게 많은 팁이 나왔는지 분석하세요. matplotlib을 사용하여 그래프를 생성하여 결과를 보여주세요.
+📊 데이터셋: titanic
+"호송선 '타이탄ิค'의 생존자와 사망자의 나이 분포를 comparesing bar chart으로 나타내고, 가장 많은 생존자가 속하는 나이 구간을 찾는다고 가정하세요. matplotlib을 사용하여 그래프를 생성하고, 결과를 분석하여 답을 작성하세요."
+`titanic` 데이터셋을 사용하여, 생존 여부를 예측하는 모델을 구축하세요. 분석에 사용할 변수로는 Passenger Class, Age, Sex, SibSp, Parch, Fare를 고려할 수 있습니다. 또한, 데이터셋에서 missing value가 있는 경우를 대응하여, 모델의 성능을 평가하고, 최적의 모델을 선택하세요. Furthermore, analyze the relationship between the survival rate and the variables mentioned above, and provide insights on which factors are most influential in predicting survival.
+`tips` 데이터셋을 사용하여, 고객의 팁 지급 여부를 예측하는 모델을 구축하세요. 분석에 사용할 변수로는 Total Bill, Tip, Sex, Smoker, Day, Time을 고려할 수 있습니다. 또한, 모델을 구축할 때는 Overfitting을 방지하고, Underfitting을 방지하여 최적의 모델을 선택하세요. 또한, 모델의 성능을 평가할 때는 ROC-AUC score를 사용하여 모델의 정확도를 평가하세요.
+`titanic` 데이터셋을 사용하여, 생존 여부를 예측하는 모델을 구축하세요. 분석에 사용할 변수로는 Passenger Class, Age, Sex, SibSp, Parch, Fare, Embarked, Fare per person을 고려할 수 있습니다. 또한, 데이터셋에서 missing value가 있는 경우를 대응하여, 모델의 성능을 평가하고, 최적의 모델을 선택하세요. 또한, Embarked 변수에 따라 생존 가능성을 예측하는 성능이 다른지 확인하세요.
+"tips 데이터셋에서 음식점의 요금과Tips의 상관관계를 분석하여, matplotlib을 사용하여 scatter plot을 생성하세요. 또한, R-squared 값을 계산하여 요금과 Tips의 관계의 강도 Ποο으로 나타내고, 결과를 분석하여 답을 작성하세요."
+"tip의 각종 요금과 서비스를 보여주는 scatter plot을 matplotlib을 사용하여 생성하고, 15~20%의 요금을 지불하는 고객이 가장 많이 있는 서비스를 찾는다고 가정하세요. 그래프의 제목, 축 레이블,_LEGEND를 한국어로 작성하세요."
+"tips 데이터셋에서 음식점의 종류별로 제공하는 음료의 가격을 분석하여, 가장 비싼 음료의 종류를 찾는다고 가정하세요. matplotlib을 사용하여 그래프를 생성하고, 각 음료의 가격을 나타내는 box plot을 사용하여 분석 결과를 표시하세요."
+`iris` 데이터셋을 사용하여, 꽃의 종을 예측하는 모델을 구축하세요. 분석에 사용할 변수로는 Sepal Length, Sepal Width, Petal Length, Petal Width를 고려할 수 있습니다. 또한, 데이터셋에서 Sepal Length와 Sepal Width의 상관관계를 분석하여, 모델의 성능을 향상하세요. 그리고, Sepal Length가 6.5 이상인 샘플의 경우, 모델의 예측 성능이 다른지 확인하세요.
+`iris` 데이터셋을 사용하여, 꽃의 종류를 예측하는 모델을 구축하세요. 분석에 사용할 변수로는 Sepal Length, Sepal Width, Petal Length, Petal Width를 고려할 수 있습니다. 또한, 데이터셋에서 Sepal Length, Sepal Width, Petal Length, Petal Width의 상호관계를 분석하여, 변수의 중요도를 평가하고, 최적의 모델을 선택하세요.
+`iris` 데이터셋을 사용하여, 꽃种을 분류하는 모델을 구축하세요. 분석에 사용할 변수로는 Sepal Length, Sepal Width, Petal Length, Petal Width를 고려할 수 있습니다. 또한, 데이터셋에서 missing value가 있는 경우를 대응하여, 모델의 성능을 평가하고, 최적의 모델을 선택하세요.
+"iris 데이터셋에서 세 개의 품종의 꽃잎 길이를 분석하여, 가장 긴 꽃잎을 가진 품종을 찾는다고 가정하세요. matplotlib을 사용하여 그래프를 생성하고, 각 품종의 꽃잎 길이를 나타내는 bar chart을 사용하여 분석 결과를 표시하세요. 또한, 각 품종의 꽃잎 길이의 분포를 확인하는 histogram chart도 함께 추가하세요."
+"이리스 데이터셋에서 각 품종의 꽃잎 길이와 꽃받침 길이를 분석하여, 이 두 변수 간의 상관관계를 확인하세요. matplotlib을 사용하여 그래프를 생성하고, Pearson 상관 계수를 표시하여 분석 결과를 표시하세요."
+"이리스 데이터셋에서 세pal 길이, petal 길이, Sepal 너비, Petal 너비의 4가지 특성에 대한 분포를 분석하여, 각 특성 간의 상관관계를 확인하세요. matplotlib을 사용하여 그래프를 생성하고, scatter plot을 사용하여 각 특성 간의 상관관계를 표시하세요. 또한, 각 특성의 분포를 나타내는 histogram을 추가하여 분석 결과를 더 자세하게 설명하세요."

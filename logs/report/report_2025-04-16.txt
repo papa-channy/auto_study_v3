@@ -1,0 +1,22 @@
+📅 자동화 실행 리포트 - 2025-04-16 14:50
+
+✅ 설정 요약:
+- 데이터셋: titanic, tips, iris
+- LLM: Groq
+- 파일 형식: ipynb
+- 호출 횟수: 1
+
+✅ 도구별 난이도 설정:
+- pds: 중하, 중상, 상
+- matplotlib: 하, 중하, 중
+
+📊 아카이브 문제 수:
+- matplotlib: 174문제
+- pds: 257문제
+- sql: 194문제
+- viz: 185문제
+→ 총합: 810문제
+
+📓 노트북 생성: matplotlib.ipynb, pds.ipynb, qmatplotlib.ipynb, qpds.ipynb, qsql.ipynb, qviz.ipynb
+📤 노션 업로드: 완료 (추정)
+🕒 실행 시각: 2025-04-16 14:50

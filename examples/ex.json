@@ -1,0 +1,76 @@
+{
+  "pds": [
+    {
+      "question": "Here's a problem that fits the given conditions:",
+      "tool": "pds",
+      "dataset": "titanic",
+      "difficulty": "상",
+      "created_at": "2025-04-16"
+    },
+    {
+      "question": "**Problem 4: 중하 (Moderate)**",
+      "tool": "pds",
+      "dataset": "titanic",
+      "difficulty": "상",
+      "created_at": "2025-04-16"
+    },
+    {
+      "question": "`iris` 데이터셋을 사용하여, 꽃种을 분류하는 모델을 구축하세요. 분석에 사용할 변수로는 Sepal Length, Sepal Width, Petal Length, Petal Width를 고려할 수 있습니다. 또한, 데이터셋에서 missing value가 있는 경우를 대응하여, 모델의 성능을 평가하고, 최적의 모델을 선택하세요.",
+      "tool": "pds",
+      "dataset": "titanic",
+      "difficulty": "상",
+      "created_at": "2025-04-16"
+    },
+    {
+      "question": "Using the `iris` dataset, build a model that classifies flower species. Consider variables such as Sepal Length, Sepal Width, Petal Length, and Petal Width as input features. Additionally, handle missing values in the dataset and evaluate the model's performance to select the optimal model.",
+      "tool": "pds",
+      "dataset": "titanic",
+      "difficulty": "상",
+      "created_at": "2025-04-16"
+    },
+    {
+      "question": "This problem is considered moderate because it requires basic knowledge of machine learning concepts, such as feature selection and model evaluation, and the use of a simple classification problem with a small number of features and classes.",
+      "tool": "pds",
+      "dataset": "titanic",
+      "difficulty": "상",
+      "created_at": "2025-04-16"
+    }
+  ],
+  "matplotlib": [
+    {
+      "question": "🎯 난이도: 중",
+      "tool": "matplotlib",
+      "dataset": "tips",
+      "difficulty": "중",
+      "created_at": "2025-04-16"
+    },
+    {
+      "question": "📝 문제:",
+      "tool": "matplotlib",
+      "dataset": "tips",
+      "difficulty": "중",
+      "created_at": "2025-04-16"
+    },
+    {
+      "question": "\"이리스 데이터셋에서 세pal 길이, petal 길이, Sepal 너비, Petal 너비의 4가지 특성에 대한 분포를 분석하여, 각 특성 간의 상관관계를 확인하세요. matplotlib을 사용하여 그래프를 생성하고, scatter plot을 사용하여 각 특성 간의 상관관계를 표시하세요. 또한, 각 특성의 분포를 나타내는 histogram을 추가하여 분석 결과를 더 자세하게 설명하세요.\"",
+      "tool": "matplotlib",
+      "dataset": "tips",
+      "difficulty": "중",
+      "created_at": "2025-04-16"
+    },
+    {
+      "question": "\"Analyze the distribution of four characteristics (sepal length, petal length, sepal width, and petal width) in the 'iris' dataset and verify the correlation between them. Using matplotlib, create a graph that includes a scatter plot to display the correlation between each pair of characteristics. Additionally, add a histogram for each characteristic to provide a more detailed analysis of the results.\"",
+      "tool": "matplotlib",
+      "dataset": "tips",
+      "difficulty": "중",
+      "created_at": "2025-04-16"
+    },
+    {
+      "question": "This problem requires the use of matplotlib to create a graph, and also requires the use of Korean language in the graph's title, axis labels, and legend. The problem is moderately challenging, requiring the use of data analysis and visualization skills.",
+      "tool": "matplotlib",
+      "dataset": "tips",
+      "difficulty": "중",
+      "created_at": "2025-04-16"
+    }
+  ]
+}

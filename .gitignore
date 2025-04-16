@@ -173,4 +173,5 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
-.env.git_commit_log.txt
+.env
+.git_commit_log.txt

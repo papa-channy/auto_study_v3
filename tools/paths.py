@@ -1,84 +1,58 @@
-import os
+from pathlib import Path
 
-# 📁 루트 기준 경로
-BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+# 🔹 프로젝트 최상위 디렉토리
+BASE_DIR = Path(__file__).resolve().parent.parent
 
-# 🔧 CONFIG
-CONFIG_DIR = os.path.join(BASE_DIR, "config")
-SETTING_JSON_PATH = os.path.join(CONFIG_DIR, "setting_config.json")
-KEYWORDS_JSON_PATH = os.path.join(CONFIG_DIR, "keywords.json")
+# ───────────────────────────────────────────────
+# 📁 config 관련
+CONFIG_DIR = BASE_DIR / "config"
+SETTING_PATH = CONFIG_DIR / "setting_config.json"
+KEYWORDS_PATH = CONFIG_DIR / "keywords.json"
+AVAILABLE_OPTION_PATH = CONFIG_DIR / "available_option.json"
+ENV_PATH = BASE_DIR / ".env"
+KEYWORDS_JSON_PATH = CONFIG_DIR / "keywords.json"
+EX_FORMAT_XLSX_PATH = CONFIG_DIR / "ex_format.xlsx"
 
-# 📂 AVAILABLE OPTIONS
-OPTION_DIR = os.path.join(CONFIG_DIR, "available_option")
-DATASETS_PATH = os.path.join(OPTION_DIR, "datasets.txt")
-LLMS_TXT_PATH = os.path.join(OPTION_DIR, "llms.txt")
-TOOLS_PATH = os.path.join(OPTION_DIR, "study_matrix.txt")
-DIFFICULTY_PATH = os.path.join(OPTION_DIR, "difficulty.txt")
-COUNT_PATH = os.path.join(OPTION_DIR, "count.txt")
-FILE_TYPE_PATH = os.path.join(OPTION_DIR, "file_type.txt")
+# ───────────────────────────────────────────────
+# 📁 data (생성된 문제 / 프롬프트 / 전체 아카이브)
+DATA_DIR = BASE_DIR / "data"
+QUESTIONS_PATH = DATA_DIR / "questions.json"
+PROMPT_PATH = DATA_DIR / "prompt.json"
+ARCHIVE_PATH = DATA_DIR / "archive.xlsx"
+ARCHIVE_QUESTION_TXT_PATH = DATA_DIR / "archive_questions.txt"
+ARCHIVE_QUESTION_LOG_PATH = DATA_DIR / "archive_question_log.txt"
 
-# 📁 DATA (문제 저장 관련)
-DATA_DIR = os.path.join(BASE_DIR, "data")
-NEW_Q_PATH = os.path.join(DATA_DIR, "new_q.txt")
-ARCHIVED_Q_PATH = os.path.join(DATA_DIR, "archived_q.txt")
-NEW_Q_PDS_PATH = os.path.join(DATA_DIR, "new_q_pds.txt")
-NEW_Q_SQL_PATH = os.path.join(DATA_DIR, "new_q_sql.txt")
-NEW_Q_VIZ_PATH = os.path.join(DATA_DIR, "new_q_viz.txt")
-ARCHIVED_Q_PDS_PATH = os.path.join(DATA_DIR, "archived_q_pds.txt")
-ARCHIVED_Q_SQL_PATH = os.path.join(DATA_DIR, "archived_q_sql.txt")
-ARCHIVED_Q_VIZ_PATH = os.path.join(DATA_DIR, "archived_q_viz.txt")
+# ───────────────────────────────────────────────
+# 📁 examples (예시)
+EXAMPLES_DIR = BASE_DIR / "examples"
+EX_JSON_PATH = EXAMPLES_DIR / "ex.json"
+EX_FORMAT_JSON_PATH = EXAMPLES_DIR / "ex_format.json"
 
-# 📁 GENERATOR
-GENERATOR_DIR = os.path.join(BASE_DIR, "generator")
-Q_GEN_PATH = os.path.join(GENERATOR_DIR, "q_gen.py")
-P_GEN_PATH = os.path.join(GENERATOR_DIR, "p_gen.py")
+# ───────────────────────────────────────────────
+# 📁 notebooks
+NOTEBOOK_DIR = BASE_DIR / "notebooks"
+NOTEBOOK_PDS_PATH = NOTEBOOK_DIR / "qpds.ipynb"
+NOTEBOOK_SQL_PATH = NOTEBOOK_DIR / "qsql.ipynb"
+NOTEBOOK_VIZ_PATH = NOTEBOOK_DIR / "qviz.ipynb"
 
-# 📁 FILE GEN (파일 생성기 모듈 위치)
-FILE_GEN_DIR = os.path.join(GENERATOR_DIR, "file_gen")
-TXT_GEN_PATH = os.path.join(FILE_GEN_DIR, "txt_gen.py")
-PY_GEN_PATH = os.path.join(FILE_GEN_DIR, "py_gen.py")
-IPYNB_GEN_PATH = os.path.join(FILE_GEN_DIR, "ipynb_gen.py")
+# ───────────────────────────────────────────────
+# 📁 logs (리포트 & 예시 아카이브)
+LOG_DIR = BASE_DIR / "logs"
+LOG_REPORT_DIR = LOG_DIR / "report"
+EX_ARCHIVE_PATH = LOG_DIR / "ex_archive.xlsx"
 
-# 📁 LLM (LLM 모듈들)
-LLM_DIR = os.path.join(BASE_DIR, "LLM")
-LLM_GROQ_PATH = os.path.join(LLM_DIR, "llama3_groq.py")
-LLM_OPENAI_PATH = os.path.join(LLM_DIR, "gpt_openai.py")
-LLM_OPR_PATH = os.path.join(LLM_DIR, "claude_opr.py")
+# ───────────────────────────────────────────────
+# 📁 opt_set (설정 도우미)
+OPT_SET_DIR = BASE_DIR / "opt_set"
+CUSTOM_SETTING_PATH = OPT_SET_DIR / "custom_setting.py"
+OPTION_ADMIN_PATH = OPT_SET_DIR / "option_admin.py"
+ADD_PATH = OPT_SET_DIR / "add.py"
+EXCEL2JSON_PATH = OPT_SET_DIR / "excel2json.py"
 
-# 📁 PROMPT
-PROMPT_DIR = os.path.join(BASE_DIR, "prompt")
-P_PDS_PATH = os.path.join(PROMPT_DIR, "p_pds.txt")
-P_SQL_PATH = os.path.join(PROMPT_DIR, "p_sql.txt")
-P_VIZ_PATH = os.path.join(PROMPT_DIR, "p_viz.txt")
-
-# 📁 RECENT EXAMPLES
-RECENT_EX_DIR = os.path.join(BASE_DIR, "recent_ex")
-EX_PDS_PATH = os.path.join(RECENT_EX_DIR, "ex_pds.txt")
-EX_SQL_PATH = os.path.join(RECENT_EX_DIR, "ex_sql.txt")
-EX_VIZ_PATH = os.path.join(RECENT_EX_DIR, "ex_viz.txt")
-
-# 📁 NOTION
-NOTION_DIR = os.path.join(BASE_DIR, "notion")
-PREPROCESS_PATH = os.path.join(NOTION_DIR, "preprocess.py")
-UPLOADER_PATH = os.path.join(NOTION_DIR, "notion_uploader.py")
-
-# 📁 NOTEBOOK
-NOTEBOOK_DIR = os.path.join(BASE_DIR, "notebooks")
-
-# 📁 LOGS
-LOG_DIR = os.path.join(BASE_DIR, "logs")
-
-# 📁 SCRIPTS
-SCRIPTS_DIR = os.path.join(BASE_DIR, "scripts")
-RUN_ALL_PATH = os.path.join(SCRIPTS_DIR, "run_all.py")
-CUSTOM_SETTING_PATH = os.path.join(SCRIPTS_DIR, "custom_setting.py")
-OPTION_ADMIN_PATH = os.path.join(SCRIPTS_DIR, "option_admin.py")
-BASE_IMPORT_PATH = os.path.join(SCRIPTS_DIR, "base_import.py")
-
-# 📁 SETUP
-SETUP_DIR = os.path.join(BASE_DIR, "setup")
-CRON_SCRIPT_PATH = os.path.join(SETUP_DIR, "auto_cron.sh")
-GIT_SCRIPT_PATH = os.path.join(SETUP_DIR, "git_auto.sh")
-
-# 📁 ENV
-ENV_PATH = os.path.join(BASE_DIR, ".env")
+# ───────────────────────────────────────────────
+# 🛠 기타 (setup, tools, scripts 등은 필요시만 지정)
+SETUP_DIR = BASE_DIR / "setup"
+SCRIPTS_DIR = BASE_DIR / "scripts"
+TOOLS_DIR = BASE_DIR / "tools"
+NOTION_DIR = BASE_DIR / "notion"
+GENERATOR_DIR = BASE_DIR / "generator"

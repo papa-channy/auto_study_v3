@@ -1,0 +1,22 @@
+📅 자동화 실행 리포트 - 2025-04-15 19:17
+
+✅ 설정 요약:
+- 데이터셋: titanic, tips, iris, penguins, flights, diamonds, mpg, car_crashes
+- LLM: Groq
+- 파일 형식: ipynb
+- 호출 횟수: 2
+
+✅ 도구별 난이도 설정:
+- pds: 중, 상, 최상
+- sql: 하, 중하, 중
+- viz: 하, 중하, 중상
+
+📊 아카이브 문제 수:
+- pds: 93문제
+- sql: 118문제
+- viz: 89문제
+→ 총합: 300문제
+
+📓 노트북 생성: qpds.ipynb, qsql.ipynb, qviz.ipynb
+📤 노션 업로드: 완료 (추정)
+🕒 실행 시각: 2025-04-15 19:17

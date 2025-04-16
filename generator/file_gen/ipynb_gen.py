@@ -1,17 +1,24 @@
 import os
 import nbformat
 from nbformat.v4 import new_notebook, new_markdown_cell, new_code_cell
+from tools.paths import NOTEBOOK_DIR, SETTING_PATH
+import json
 
+# ✅ 도구 목록 동적 로딩 (설정 기반)
+with open(SETTING_PATH, encoding="utf-8") as f:
+    config = json.load(f)
+tool_list = list(config["study_matrix&difficulty"].keys())
+
+# ✅ 도구 이름 → 노트북 경로 자동 생성
 NOTEBOOK_PATHS = {
-    "pds": os.path.join("notebooks", "qpds.ipynb"),
-    "sql": os.path.join("notebooks", "qsql.ipynb"),
-    "viz": os.path.join("notebooks", "qviz.ipynb")
+    tool: os.path.join(NOTEBOOK_DIR, f"{tool}.ipynb")
+    for tool in tool_list
 }
 
 def generate_notebooks(questions):
     """
-    도구별로 하나의 Jupyter Notebook에 누적 저장
-    (notebooks/qpds.ipynb, qsql.ipynb, qviz.ipynb)
+    ✅ 도구별로 하나의 Jupyter Notebook에 누적 저장
+    - notebooks/{tool}.ipynb
     """
     tool_buckets = {}
 
@@ -20,8 +27,13 @@ def generate_notebooks(questions):
         tool_buckets.setdefault(tool, []).append(q)
 
     for tool, qlist in tool_buckets.items():
-        path = NOTEBOOK_PATHS[tool]
+        path = NOTEBOOK_PATHS.get(tool)
 
+        if not path:
+            print(f"⚠️ 노트북 경로가 정의되지 않은 도구: {tool}")
+            continue
+
+        # 기존 노트북 불러오기 or 새로 만들기
         if os.path.exists(path):
             with open(path, "r", encoding="utf-8") as f:
                 nb = nbformat.read(f, as_version=4)

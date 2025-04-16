@@ -1,5 +1,0 @@
-{"tool": "pds", "dataset": "titanic", "difficulty": "상", "category": "pds/그룹 및 요약 통계", "question": "성별별 생존율을 구하세요."}
-{"tool": "pds", "dataset": "titanic", "difficulty": "최상", "category": "pds/시각화", "question": "요일별 생존율을 그래프로 나타내세요."}
-{"tool": "pds", "dataset": "tips", "difficulty": "중", "category": "pds/데이터 전처리", "question": "결측치가 있는 행을 제거하세요."}
-{"tool": "pds", "dataset": "titanic", "difficulty": "상", "category": "pds/요약 통계", "question": "성별별 생존율을 구하세요."}
-{"tool": "pds", "dataset": "titanic", "difficulty": "최상", "category": "pds/시각화", "question": "이동 수단별 생존율을 막대 그래프로 나타내세요."}

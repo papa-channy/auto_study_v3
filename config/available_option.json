@@ -1,0 +1,23 @@
+{
+    "LLM": ["Groq", "OpenAI", "Claude", "기타"],
+  
+    "TOOL": ["pds", "sql", "viz", "기타"],
+  
+    "DIFFICULTY": [
+      "하", "중하", "중", "중상", "상", "최상", "극상", "기타"
+    ],
+  
+    "FILE_TYPE": ["ipynb", "txt", "py", "기타"],
+  
+    "DATASET": [
+      "titanic", "tips", "iris", "penguins",
+      "flights", "diamonds", "mpg", "car_crashes",
+      "anscombe", "attention", "brain_networks", "dots",
+      "exercise", "geyser", "planets", "fmri",
+      "car_crashes", "diamonds", "taxis", "glue",
+      "titanic", "penguins", "mpg", "flights", "tips", "iris",
+      "기타"
+    ]
+  
+  }
+  

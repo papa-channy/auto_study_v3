@@ -1,5 +1,0 @@
-{"tool": "viz", "dataset": "요약 통계", "difficulty": "중상", "category": "요약 통계", "question": "Survived와 Pclass에 따라 승객의 수를 구하세요."}
-{"tool": "viz", "dataset": "tips", "difficulty": "하", "category": "카테고리", "question": "결측값이 있는 행을 제거하세요."}
-{"tool": "viz", "dataset": "tips", "difficulty": "중상", "category": "요약 통계", "question": "성별별 생존율을 구하세요."}
-{"tool": "viz", "dataset": "tips", "difficulty": "하", "category": "카테고리", "question": "결측값이 있는 행을 제거하세요."}
-{"tool": "viz", "dataset": "tips", "difficulty": "상", "category": "요약 통계", "question": "성별별 평균 팁 금액을 구하세요."}

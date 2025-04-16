@@ -2,31 +2,22 @@
   "DATASET": [
     "titanic",
     "tips",
-    "iris",
-    "penguins",
-    "flights",
-    "diamonds",
-    "mpg",
-    "car_crashes"
+    "iris"
   ],
   "LLM": "Groq",
   "study_matrix&difficulty": {
     "pds": [
-      "중",
-      "상",
-      "최상"
+      "중하",
+      "중상",
+      "상"
     ],
-    "sql": [
+    
+    "matplotlib": [
       "하",
       "중하",
       "중"
-    ],
-    "viz": [
-      "하",
-      "중하",
-      "중상"
     ]
   },
-  "count": 2,
+  "count": 1,
   "file_type": "ipynb"
 }
