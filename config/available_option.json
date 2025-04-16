@@ -1,23 +1,22 @@
 {
-    "LLM": ["Groq", "OpenAI", "Claude", "기타"],
-  
-    "TOOL": ["pds", "sql", "viz", "기타"],
-  
-    "DIFFICULTY": [
-      "하", "중하", "중", "중상", "상", "최상", "극상", "기타"
-    ],
-  
-    "FILE_TYPE": ["ipynb", "txt", "py", "기타"],
-  
-    "DATASET": [
-      "titanic", "tips", "iris", "penguins",
-      "flights", "diamonds", "mpg", "car_crashes",
-      "anscombe", "attention", "brain_networks", "dots",
-      "exercise", "geyser", "planets", "fmri",
-      "car_crashes", "diamonds", "taxis", "glue",
-      "titanic", "penguins", "mpg", "flights", "tips", "iris",
-      "기타"
-    ]
-  
-  }
-  
+  "LLM": ["Groq", "OpenAI", "Claude"],
+
+  "TOOL": ["pds", "sql", "matplotlib"],
+
+  "DIFFICULTY": [
+    "입문", "기초", "객관식 기초", "객관식 심화",
+    "실무형", "코딩 기본", "코딩 응용",
+    "중상", "최상", "챌린지",
+    "빈칸 추론 기초", "빈칸 추론 중급", "빈칸 추론 챌린지"
+  ],
+
+  "FILE_TYPE": ["ipynb", "txt", "py"],
+
+  "DATASET": [
+    "titanic", "tips", "iris", "penguins",
+    "flights", "diamonds", "mpg", "car_crashes",
+    "anscombe", "attention", "brain_networks", "dots",
+    "exercise", "geyser", "planets", "fmri",
+    "taxis", "glue"
+  ]
+}

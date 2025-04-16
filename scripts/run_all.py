@@ -19,7 +19,7 @@ from generator.file_gen.ipynb_gen import generate_notebooks
 from generator.file_gen.txt_gen import generate_txt_files
 from generator.file_gen.py_gen import generate_py_files
 from tools.archiver import archive_all
-from tools.log_reporter import save_log_report
+from logs.log_reporter import save_log_report
 from tools.clean_cache import clean_all_cache
 from notion.notion_uploader import NotionUploader
 
